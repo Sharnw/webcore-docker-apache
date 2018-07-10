@@ -24,8 +24,10 @@ https://dandisy.github.io/1.0.4/start.html
 ### enter apache container bash prompt
 ``docker exec -it webcore-docker-apache /bin/bash``
 
-### create your laravel or webcore project
+### create a new laravel project
 ``composer create-project --prefer-dist laravel/laravel <project-name>``
+
+## create a new webcore project
 ``composer create-project dandisy/webcore <project-name>``
 
 ### setup virtual host
