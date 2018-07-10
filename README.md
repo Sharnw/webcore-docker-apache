@@ -34,7 +34,7 @@ https://dandisy.github.io/1.0.4/start.html
 
 add virtualhost files to vhosts/ e.g.
 
-``
+```
 
 <VirtualHost *:80>
     ServerName dev.webcore
@@ -57,4 +57,4 @@ add virtualhost files to vhosts/ e.g.
 
 </VirtualHost>
 
-``
+```
