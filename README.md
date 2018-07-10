@@ -9,24 +9,24 @@ https://dandisy.github.io/1.0.4/start.html
 ## Building the apache container
 
 ### build docker image
-docker build -t sharnw/webcore-docker-apache -f Dockerfile .
+``docker build -t sharnw/webcore-docker-apache -f Dockerfile .``
 
 ## Manage containers
 
 ### launch containers (detached)
-docker-compose up -d 
+``docker-compose up -d``
 
 ### kill containers
-docker-compose down
+``docker-compose down``
 
 ## Settings up your laravel apps
 
 ### enter apache container bash prompt
-docker exec -it webcore-docker-apache /bin/bash
+``docker exec -it webcore-docker-apache /bin/bash``
 
 ### create your laravel or webcore project
-composer create-project --prefer-dist laravel/laravel <project-name>
-composer create-project dandisy/webcore <project-name>
+``composer create-project --prefer-dist laravel/laravel <project-name>``
+``composer create-project dandisy/webcore <project-name>``
 
 ### setup virtual host
 
