@@ -32,24 +32,22 @@ https://dandisy.github.io/1.0.4/start.html
 
 ### setup virtual host
 
-add virtualhost files to vhosts/
-
-e.g. 
+add virtualhost files to vhosts/ e.g.
 
 ``
-<VirtualHost *:80>
 
+<VirtualHost *:80>
     ServerName dev.webcore
 
     DirectoryIndex index.php
-    DocumentRoot /var/www/html/webcore-example/public
+    DocumentRoot /var/www/html/webcore-project/public
 
     <Directory />
         Order allow,deny
         Allow from all
         AllowOverride All
     </Directory>
-    <Directory /var/www/html/webcore-example/public/>
+    <Directory /var/www/html/webcore-project/public/>
         Order allow,deny
         Allow from all
         AllowOverride All
@@ -58,4 +56,5 @@ e.g.
     ErrorLog /var/log/php-error.log
 
 </VirtualHost>
+
 ``
