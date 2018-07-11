@@ -2,15 +2,15 @@
 version: "2.1"
 services:
 
-    redis:
-      container_name: webcore-docker-redis
+    web-redis:
+      container_name: web-redis
       image: redis:latest
       ports:
         - "6379:6379"
 
-    mysql:
+    web-mysql:
       image: mysql:latest
-      container_name: webcore-docker-mysql
+      container_name: web-mysql
       volumes:
           - ./mysql:/var/lib/mysql-files
           - ./mysql:/docker-entrypoint-initdb.d
@@ -20,14 +20,14 @@ services:
       environment:
         - MYSQL_ROOT_PASSWORD=root
 
-    web:
+    web-apache:
       image: sharnw/webcore-docker-apache
-      container_name: webcore-docker-apache
+      container_name: web-apache
       stdin_open: true
       tty: true
       links:
-        - "redis"
-        - "mysql"
+        - "web-redis"
+        - "web-mysql"
       volumes:
         - ./web:/var/www/html
         - ./vhost:/etc/apache2/sites-enabled
@@ -38,4 +38,3 @@ services:
       ports:
        - "80:80"
        - "443:443"
-

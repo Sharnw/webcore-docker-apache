@@ -1,5 +1,5 @@
 # Pull base image
-FROM php:7.2-apache
+FROM php:7.2.7-apache
 COPY config/php.ini /usr/local/etc/php/
 
 RUN apt-get -y update
@@ -47,6 +47,9 @@ RUN chmod a+x /usr/local/bin/composer
 # install laravel
 RUN composer global require "laravel/installer"
 RUN export PATH=$PATH:$HOME/.composer/vendor/bin
+
+# fix mysql8 authentication bug
+COPY config/my_auth.cnf /etc/mysql/conf.d/my_auth.cnf
 
 COPY config/apache2.conf /etc/apache2
 ENV APACHE_RUN_DIR /var/run/apache2
